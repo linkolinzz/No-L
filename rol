@@ -1,0 +1,4 @@
+ROLE_PASSWORDS = {
+    "Адміністратор": "ROLE_ADMIN_2025",
+    "Робітник": "ROLE_WORKER_2025",
+}
