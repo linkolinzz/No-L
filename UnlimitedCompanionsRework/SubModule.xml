@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="Unlimited Companions Rework"/>
+  <Id value="UnlimitedCompanionsRework"/>
+  <Version value="v1.0.0"/>
+  <SingleplayerModule value="true"/>
+  <MultiplayerModule value="false"/>
+  <DependedModules>
+    <DependedModule Id="Native"/>
+    <DependedModule Id="SandBoxCore"/>
+    <DependedModule Id="Sandbox"/>
+    <DependedModule Id="CustomBattle"/>
+    <DependedModule Id="StoryMode"/>
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="UnlimitedCompanionsRework"/>
+      <DLLName value="UnlimitedCompanionsRework.dll"/>
+      <SubModuleClassType value="UnlimitedCompanionsRework.SubModule"/>
+      <Tags>
+        <Tag key="Scripts" value="true"/>
+      </Tags>
+    </SubModule>
+  </SubModules>
+  <Xmls>
+  </Xmls>
+</Module>
