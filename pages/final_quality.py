@@ -262,7 +262,6 @@ def view(page: ft.Page, request_no: str = ""):
 
     # ---------- part chosen ----------
     def on_part_change(e):
-        nonlocal current_total
         reset(full=False)
         if not dd_part.value:
             return
@@ -287,7 +286,6 @@ def view(page: ft.Page, request_no: str = ""):
 
     # ---------- SAVE / UPDATE ----------
     def save_record(e):
-        nonlocal current_total
         try:
             chk = _as_int(tf_chk.value)
             defect = _as_int(tf_def.value)
@@ -395,7 +393,6 @@ def view(page: ft.Page, request_no: str = ""):
 
             def make_edit_handler(rec):
                 def _edit(_e):
-                    nonlocal current_total
                     editing["id"] = rec["id"]
                     # визначаємо джерело для підрахунків
                     src2, pid2 = _row_src_pid(rec)

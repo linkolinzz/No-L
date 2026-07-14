@@ -132,7 +132,6 @@ def _tab_main(page: ft.Page) -> ft.Column:
         page.update()
 
     def confirm_delete(code: str):
-        nonlocal selected_product_code
         selected_product_code = code
         confirm_dialog.title   = ft.Text("Підтвердження видалення")
         confirm_dialog.content = ft.Text(f"Видалити виріб '{code}'?")
@@ -147,7 +146,6 @@ def _tab_main(page: ft.Page) -> ft.Column:
         page.update()
 
     def delete_product():
-        nonlocal selected_product_code
         db_exec("DELETE FROM product_base WHERE article_code = %s", (selected_product_code,))
         close_dialog()
         load_products()
@@ -399,7 +397,6 @@ def _tab_old(page: ft.Page) -> ft.Column:
         page.update()
 
     def toggle_select_all(e=None):
-        nonlocal selected_codes
         if select_all_cb.value:
             # обрати всі поточні у відфільтрованому наборі
             s = (search_old.value or "").strip()
@@ -459,7 +456,6 @@ def _tab_old(page: ft.Page) -> ft.Column:
             )
 
             def _toggle_row_cb(e, c=code, cb=row_cb):
-                nonlocal selected_codes
                 if cb.value:
                     selected_codes.add(c)
                 else:
