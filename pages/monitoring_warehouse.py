@@ -285,6 +285,7 @@ def warehouse_view(page: ft.Page) -> ft.Row:
 
     # ── побудова списку заявок
     def _load_master():
+        nonlocal selected_request
 
         where_recv, params, request_only = _where_recv_and_params()
 
@@ -367,6 +368,7 @@ def warehouse_view(page: ft.Page) -> ft.Row:
 
     # ── завантаження деталей заявки
     def _load_details(request_number: str):
+        nonlocal selected_request, last_articles_csv, last_moves_csv
         selected_request = request_number
         details_title.value = f"Деталі заявки №{request_number}"
 
